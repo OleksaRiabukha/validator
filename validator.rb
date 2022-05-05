@@ -1,4 +1,4 @@
-require_relative './error_formater'
+require_relative './validation_error'
 Dir[File.expand_path('validations/*.rb', __dir__)].each { |file| require file }
 
 module Validations
