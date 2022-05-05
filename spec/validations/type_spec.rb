@@ -1,20 +1,24 @@
 require 'spec_helper'
 
-class TestPerson
+class TypePerson
   extend Validations
 
-  validates :name, presence: true
+  validates :name, type: String
 
   attr_accessor :name
 end
 
 RSpec.describe Validations::TypeValidator do
-  let(:object) { TestPerson.new }
+  let(:object) { TypePerson.new }
   let(:attr_name) { :name }
   let(:value) { String }
   let(:error) { { attr_name => "#{attr_name.capitalize} should be a type of #{value}" } }
 
   describe '.validate' do
+    before do
+      object.name = 999
+    end
+
     it 'adds error to errors object if it does not have an attribute' do
       begin
         Validations::TypeValidator.validate(object, attr_name, value)
