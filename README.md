@@ -20,9 +20,9 @@ The module provides a Rails-like model attributes verification for PORO. Current
 		class DummyClass
 		  extend Validations
 
-			validates :name, presence: true
-			validates :date_of_birth, type: DateTime
-			validates :phone_number, format: /\d/
+		  validates :name, presence: true
+		  validates :date_of_birth, type: DateTime
+		  validates :phone_number, format: /\d/
 		end
 
 		```
@@ -38,10 +38,10 @@ Add your custom validations to the `/validations/` folder. The name of the valid
 		```
 		module Validations
 		  class AbsenceValidator
-			  def self.validate(object, attr_name, value)
-				  # Your code
-			  end
-			end
+		    def self.validate(object, attr_name, value)
+		      # Your code
+		    end
+		  end
 		end
 
 		```
@@ -50,7 +50,7 @@ Add your custom validations to the `/validations/` folder. The name of the valid
 
 		```
 		class DummyClass
-			validates name, absence: true
+		  validates name, absence: true
 		end
 
 		```
