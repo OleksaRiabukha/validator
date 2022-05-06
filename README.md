@@ -7,13 +7,15 @@ The module provides a Rails-like model attributes verification for PORO. Current
 - download module
 - require `/validator.rb` file in your Ruby file
 - extend your Class with `Validations` module:
+
 		```
 		class DummyClass
 		  extend Validations
 		end
-
+    
 		```
 - list validations for attributes:
+
 		```
 		class DummyClass
 		  extend Validations
@@ -35,16 +37,17 @@ Add your custom validations to the `/validations/` folder. The name of the valid
 
 		```
 		module Validations
-			class AbsenceValidator
+		  class AbsenceValidator
 			  def self.validate(object, attr_name, value)
-					# Your code
-				end
+				  # Your code
+			  end
 			end
 		end
 
 		```
 
 - call the validates method in your model:
+
 		```
 		class DummyClass
 			validates name, absence: true
